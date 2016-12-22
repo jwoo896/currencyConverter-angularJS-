@@ -5,7 +5,7 @@ angular.module('converter',[])
 	$http.get('http://api.fixer.io/latest?base=ZAR')
 	.then(function(res){
 		$scope.rates = res.data.rates;
-		$scope.toType = $scpoe.rates.EUR;
+		$scope.toType = $scope.rates.EUR;
 		$scope.fromType = $scope.rates.USD;
 		$scope.fromValue = 1;
 		$scope.convertFunction();
