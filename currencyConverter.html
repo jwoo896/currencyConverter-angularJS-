@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+	<div ng-app="converter" ng-controller="converterCtrl">
+		<!--putting in an "ng-model" for this select tag when using "ng-repeat" will cause the select box to have a blank default value.-->
+		<form action="" method="POST" role="form">
+			<label>From: </label><select ng-model="fromType" required data-ng-change="convertFunction()" ng-options="x for (x, y) in rates track by y">
+				<option value="">Select</option>
+			</select>
+			<input type="number" placeholder="Enter a value" data-ng-model="fromValue" data-ng-change="convertFunction()">
+		</br>
+			<label>To: </label><select ng-model="toType" required data-ng-change="convertFunction()" ng-options="x for (x, y) in rates track by y">
+				<option value="">Select</option>
+			</select>
+			<input type="text" placeholder="Enter a value" data-ng-model="toValue" data-ng-change="convertFunction()" 
+		</form>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="currencyConverter.js" type="text/javascript"></script>
+</body>
+</html>
